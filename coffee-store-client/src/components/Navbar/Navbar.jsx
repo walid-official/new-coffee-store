@@ -1,24 +1,25 @@
 import React from "react";
 import iconNav from "../../assets/more/logo1.png";
 import bgNav from "../../assets/more/15.jpg";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const Links = (
     <>
-      <li>
-        <a className="text-xl">Home</a>
-      </li>
-      <li>
-        <a className="text-xl">About</a>
-      </li>
-      <li>
-        <a className="text-xl">Products</a>
-      </li>
-      <li>
-        <a className="text-xl">Testimonials</a>
-      </li>
-      <li>
-        <a className="text-xl">Contacts</a>
-      </li>
+      <NavLink to="/">
+        <li className="text-xl">Home</li>
+      </NavLink>
+      <NavLink to="">
+        <li className="text-xl">About</li>
+      </NavLink>
+      <NavLink to="">
+        <li className="text-xl">Products</li>
+      </NavLink>
+      <NavLink to="">
+        <li className="text-xl">Testimonials</li>
+      </NavLink>
+      <NavLink to="">
+        <li className="text-xl">Contacts</li>
+      </NavLink>
     </>
   );
   return (
@@ -61,7 +62,7 @@ const Navbar = () => {
               <a className="btn text-white btn-ghost text-xl sm:text-2xl">Espresso Emporium</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-              <ul className="menu menu-horizontal px-1 text-white">{Links}</ul>
+              <ul className="menu menu-horizontal px-1 text-white space-x-8">{Links}</ul>
             </div>
             <div className="navbar-end">
               <a className="btn">Button</a>

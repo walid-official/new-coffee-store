@@ -2,6 +2,7 @@ import React from "react";
 import BannerBg from "../../assets/more/3.png";
 import '../../index.css'
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div
@@ -16,7 +17,7 @@ const Banner = () => {
           nostalgia back!! Your companion of every moment!!! Enjoy the beautiful
           moments and make them memorable.
         </p>
-        <button className="btn bg-[#E3B577] text-xl font-semibold border-none">Learn More</button>
+        <Link to="/CustomCoffee" ><button className="btn bg-[#E3B577] text-xl font-semibold border-none">Custom Coffee</button></Link>
         </div>
       </div>
     </div>
