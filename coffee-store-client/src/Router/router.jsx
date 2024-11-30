@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import FormLayout from "../layout/FormLayout";
-import UpdateLayout from "../layout/UpdateLayout";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
+import LoginRegisterLayout from "../layout/LoginRegisterLayout";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffeeStore"),
+        loader: () => fetch("https://coffee-store-server-jade-iota.vercel.app/coffeeStore"),
       },
     ],
   },
@@ -24,7 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/CoffeeInfo/:id",
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({params}) => fetch(`http://localhost:5000/coffeeStore/${params.id}`)
+    loader: ({params}) => fetch(`https://coffee-store-server-jade-iota.vercel.app/coffeeStore/${params.id}`)
+  },
+  {
+    path: "/submit/:page",
+    element: <LoginRegisterLayout></LoginRegisterLayout>
   }
 ]);
 

@@ -1,29 +1,27 @@
 const express = require('express');
 const cors = require('cors');
-const Coffees = require('./Coffees.json');
+// const Coffees = require('./Coffees.json');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
+require('dotenv').config()
+const port = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 
-require('dotenv').config()
-const port = process.env.PORT || 5000;
+
 
 //coffee22Store
 //UyLPAVohsnkkrcMn
 
-app.get('/', (req, res) => {
-  res.send('Hello World! Do You Know Me')
-})
 
-app.get('/coffees', (req, res) => {
-    res.send(Coffees)
-})
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// app.get('/coffees', (req, res) => {
+//     res.send(Coffees)
+// })
+
+
 
 // MongoDB Connection : 
 // --------------------
@@ -42,7 +40,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
     
     const coffeeDB = client.db("coffeeStore");
     const CoffeeCollection = coffeeDB.collection("coffees");
@@ -58,8 +56,11 @@ async function run() {
     app.get("/coffeeStore",async(req,res) => {
       const cursor = CoffeeCollection.find();
       const result = await cursor.toArray();
+      console.log(result);
       res.send(result);
     })
+
+    
     // Delete Operation
     app.delete('/coffeeStore/:id',async(req,res) => {
       const id = req.params.id;
@@ -67,6 +68,8 @@ async function run() {
       const result = await CoffeeCollection.deleteOne(query);
       res.send(result);
     })
+
+
     // update operation
     app.put('/coffeeStore/:id',async(req,res) => {
       const id = req.params.id;
@@ -88,9 +91,16 @@ async function run() {
       res.send(result);
     })
 
+    app.get("/coffeeStore/:id",async(req,res) => {
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)};
+      const result = await CoffeeCollection.findOne(query);
+      res.send(result);
+    })
+
 
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
+    // await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
@@ -98,3 +108,14 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+
+
+app.get('/', (req, res) => {
+  res.send('Hello World! Do You Know Me')
+})
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})

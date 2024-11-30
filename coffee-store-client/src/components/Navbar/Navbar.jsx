@@ -1,7 +1,7 @@
 import React from "react";
 import iconNav from "../../assets/more/logo1.png";
 import bgNav from "../../assets/more/15.jpg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const Links = (
     <>
@@ -54,18 +54,19 @@ const Navbar = () => {
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white"
+                  className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow md:text-white"
                 >
                   {Links}
                 </ul>
               </div>
-              <a className="btn text-white btn-ghost text-xl sm:text-2xl">Espresso Emporium</a>
+              <a className="btn btn-ghost text-xl text-white sm:text-2xl">Espresso <span className="">Emporium</span> </a>
             </div>
             <div className="navbar-center hidden lg:flex">
               <ul className="menu menu-horizontal px-1 text-white space-x-8">{Links}</ul>
             </div>
-            <div className="navbar-end">
-              <a className="btn">Button</a>
+            <div className="navbar-end space-x-2">
+              <Link to="/submit/Login" className="bg-transparent border-white border text-white px-7 py-2 hover:bg-[#E3B577] hover:border-[#E3B577] duration-500 ">Login</Link>
+              <Link to="/submit/Register" className="bg-transparent border-white border text-white px-7 py-2 hover:bg-[#E3B577] hover:border-[#E3B577] duration-500 ">Register</Link>
             </div>
           </div>
         </div>

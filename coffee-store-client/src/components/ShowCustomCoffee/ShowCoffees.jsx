@@ -7,7 +7,7 @@ const ShowCoffees = ({ coffeeStore }) => {
     const [coffees,setCoffees] = useState(coffeeStore);
 
     const handleDeleteCoffee = (id) => {
-        fetch(`http://localhost:5000/coffeeStore/${id}`,{
+        fetch(`https://coffee-store-server-jade-iota.vercel.app/coffeeStore/${id}`,{
             method: "DELETE"
         })
         .then(res => res.json())
@@ -23,7 +23,7 @@ const ShowCoffees = ({ coffeeStore }) => {
     <div className="w-11/12 mx-auto">
       <div className="text-center">
         <h2 className="font-bold text-3xl">Our Popular Products</h2>
-        <NavLink to="/CustomCoffee/Custom" className="">
+        <NavLink to="/CustomCoffee" className="">
           <button className="btn mt-3 mb-10">Add Coffee</button>
         </NavLink>
       </div>
