@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-
+const {createSignUpUser} = useContext(AuthContext);
+const navigate = useNavigate();
 
     const handleRegisterSubmit = (e) => {
         e.preventDefault();
@@ -10,13 +13,36 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photo = form.photo.value;
-        const users = {name,email,password,photo};
+        const isValidate = false;
+
+        createSignUpUser(email,password)
+        .then((result) => {
+            console.log(result);
+            const createdAt = result?.user?.metadata?.
+            creationTime            
+            const users = {name,email,photo,createdAt,isValidate};
+
+            fetch('https://coffee-store-server-jade-iota.vercel.app/users',{
+              method: "POST",
+              headers: {
+                "content-type": 'application/json'
+              },
+              body: JSON.stringify(users)
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              alert('user is successfully created');
+              navigate("/")
+              form.reset();
+            })
+
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
     }
-
-
-
-
-
 
 
 

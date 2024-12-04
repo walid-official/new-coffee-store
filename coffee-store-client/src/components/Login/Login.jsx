@@ -1,6 +1,57 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const handleSignInUser = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        signInUser(email,password)
+        .then(result => {
+            console.log(result);
+          console.log(result.user.metadata);
+
+          const lastSignInTime = result?.user?.metadata?.lastSignInTime;
+
+          const loginInfo = {email,lastSignInTime}
+          console.log(loginInfo);
+
+          fetch(`https://coffee-store-server-jade-iota.vercel.app/users`,{
+            method: "PATCH",
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(loginInfo)
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data)
+          })
+            alert("Successfully Logged In");
+            navigate('/')
+        }).catch(error => {
+            console.log(error);
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <div className="hero bg-base-200 min-h-screen">
@@ -14,13 +65,14 @@ const Login = () => {
             </p>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form className="card-body">
+            <form onSubmit={handleSignInUser} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -32,6 +84,7 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
