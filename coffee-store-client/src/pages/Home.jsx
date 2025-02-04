@@ -16,12 +16,13 @@ console.log(coffeeStore);
         <div className="">
           <CoffeeCard></CoffeeCard>
         </div>
-        <div className="">
-          <Service></Service>
-        </div>
         <div className="py-20">
           <ShowCoffees coffeeStore={coffeeStore}></ShowCoffees>
         </div>
+        <div className="pb-10">
+          <Service></Service>
+        </div>
+        
         <div className="">
           <Popularity></Popularity>
         </div>

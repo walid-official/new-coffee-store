@@ -1,30 +1,27 @@
-import React from 'react';
-import mainIcon1 from '../../assets/icons/main_icon1.png'
-import mainIcon2 from '../../assets/icons/main_icon2.png'
-import mainIcon3 from '../../assets/icons/main_icon3.png'
+import React from "react";
+import bannerCoffee1 from "../../assets/banner/banner-coffee1.webp";
+import bannerCoffee2 from "../../assets/banner/banner-coffee1.webp";
 const CoffeeCard = () => {
-    return (
-        <div className='grid md:grid-cols-3 w-[80%] mx-auto py-10'>
-            <div className="bg-[#b89d64] rounded-l-full rounded-r-badge py-12 flex justify-center">
-                <div className="">
-                    <img className='w-36' src={mainIcon1} alt="" />
-                    <h2 className='text-center text-white text-2xl'>Natural <span className='text-[#2b1b13]  '>Coffee</span> </h2>
-                </div>
-            </div>
-            <div className="bg-[#513826] py-12 flex justify-center">
-            <div className="">
-                    <img className='w-36' src={mainIcon2} alt="" />
-                    <h2 className='text-center text-white text-2xl'>Chaines <span className='text-[#b89d64]'>Coffee</span> </h2>
-                </div>
-            </div>
-            <div className="bg-[#2b1b13] rounded-r-full py-12 flex justify-center">
-            <div className="">
-                    <img className='w-36' src={mainIcon3} alt="" />
-                    <h2 className='text-center text-white text-2xl'>Sweet <span className='text-[#513826]'>Deserts</span> </h2>
-                </div>
-            </div>
+  return (
+    <div className="grid grid-cols-3 ">
+      {[
+        "https://monfee-store-demo.myshopify.com/cdn/shop/articles/Blog9_1024x1024.jpg?v=1592032255",
+        "https://monfee-store-demo.myshopify.com/cdn/shop/articles/Blog3_1024x1024.jpg?v=1592032221",
+        "https://monfee-store-demo.myshopify.com/cdn/shop/articles/Blog2_1024x1024.jpg?v=1592032190",
+      ].map((src, index) => (
+        <div key={index} className="relative group overflow-hidden">
+          <img
+            src={src}
+            alt=""
+            className="w-full transition-transform duration-300 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-black opacity-100 bg-opacity-50  transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+            <span className="text-white text-lg font-semibold">View More</span>
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default CoffeeCard;

@@ -9,9 +9,9 @@ const Banner = () => {
       className=""
       
     >
-      <div className="w-11/12 mx-auto flex justify-center lg:py-60 py-20">
+      <div className="w-11/12 mx-auto flex justify-center items-center min-h-screen">
         <div className="text-center">
-        <h2 className="text-5xl font-bold text-[#E3B577]">Would you like a Cup of Delicious Coffee?</h2>
+        <h2 className="text-6xl font-bold text-[#E3B577]">Would you like a Cup of Delicious Coffee?</h2>
         <p className="py-3 md:w-[60%] mx-auto text-white text-xl">
           It's coffee time - Sip & Savor - Relaxation in every sip! Get the
           nostalgia back!! Your companion of every moment!!! Enjoy the beautiful
