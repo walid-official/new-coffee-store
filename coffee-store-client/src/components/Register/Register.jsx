@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import GoogleAuth from './../GoogleAuth/GoogleAuth';
 
 const Register = () => {
 const {createSignUpUser} = useContext(AuthContext);
@@ -109,8 +110,9 @@ const navigate = useNavigate();
                 />
               </div>
               <div className="form-control mt-6">
-                <button className="btn bg-[#E3B577]">Register Now</button>
+                <button type="submit" className="btn bg-[#E3B577]">Register Now</button>
               </div>
+              <GoogleAuth></GoogleAuth>
             </form>
           </div>
         </div>
