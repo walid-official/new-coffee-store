@@ -15,7 +15,7 @@ const CustomCoffee = () => {
         const photo = form.photo.value;
         const Coffee = {name,chef,supplier,test,category,details,photo};
         console.log(Coffee);
-        fetch('https://coffee-store-server-jade-iota.vercel.app/coffeeStore',{
+        fetch('http://localhost:5000/coffeeStore',{
             method: "POST",
             headers: {
               'content-type': 'application/json'

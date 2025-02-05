@@ -7,7 +7,7 @@ const [users,setUsers] = useState([]);
 const [search,setSearch] = useState("");
 
 useEffect(() => {
-    fetch('https://coffee-store-server-jade-iota.vercel.app/users')
+    fetch('http://localhost:5000/users')
     .then(res => res.json())
     .then(data => setUsers(data))
 },[])
@@ -35,7 +35,7 @@ useEffect(()=> {
 
 
   const handleDelete = (id) => {
-    fetch(`https://coffee-store-server-jade-iota.vercel.app/users/${id}`,{
+    fetch(`http://localhost:5000/users/${id}`,{
       method: "DELETE"
     })
     .then(res => res.json())

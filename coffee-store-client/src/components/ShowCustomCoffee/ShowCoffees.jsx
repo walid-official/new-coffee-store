@@ -7,7 +7,7 @@ const ShowCoffees = ({ coffeeStore }) => {
     const [coffees,setCoffees] = useState(coffeeStore);
 
     const handleDeleteCoffee = (id) => {
-        fetch(`https://coffee-store-server-jade-iota.vercel.app/coffeeStore/${id}`,{
+        fetch(`http://localhost:5000/coffeeStore/${id}`,{
             method: "DELETE"
         })
         .then(res => res.json())

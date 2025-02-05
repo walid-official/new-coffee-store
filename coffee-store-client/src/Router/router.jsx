@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import FormLayout from "../layout/FormLayout";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import LoginRegisterLayout from "../layout/LoginRegisterLayout";
+import About from "../components/About/About";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("https://coffee-store-server-jade-iota.vercel.app/coffeeStore"),
+        loader: () => fetch("http://localhost:5000/coffeeStore"),
       },
+      {
+        path: "about",
+        element: <About></About>
+      }
     ],
   },
   {
@@ -24,7 +29,7 @@ const router = createBrowserRouter([
   {
     path: "/CoffeeInfo/:id",
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({params}) => fetch(`https://coffee-store-server-jade-iota.vercel.app/coffeeStore/${params.id}`)
+    loader: ({params}) => fetch(`http://localhost:5000/coffeeStore/${params.id}`)
   },
   {
     path: "/submit/:page",

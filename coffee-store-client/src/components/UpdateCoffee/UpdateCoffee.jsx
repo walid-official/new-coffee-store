@@ -16,7 +16,7 @@ console.log(updateData);
         const photo = form.photo.value;
         const Coffee = {name,chef,supplier,test,category,details,photo};
         console.log(Coffee);
-        fetch(`https://coffee-store-server-jade-iota.vercel.app/coffeeStore/${updateData._id}`,{
+        fetch(`http://localhost:5000/coffeeStore/${updateData._id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

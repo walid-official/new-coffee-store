@@ -1,6 +1,4 @@
 import React from "react";
-import bannerCoffee1 from "../../assets/banner/banner-coffee1.webp";
-import bannerCoffee2 from "../../assets/banner/banner-coffee1.webp";
 const CoffeeCard = () => {
   return (
     <div className="w-[80%] mx-auto -translate-y-32 ">

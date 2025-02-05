@@ -1,51 +1,46 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useNavigate } from "react-router-dom";
-import GoogleAuth from './../GoogleAuth/GoogleAuth';
+import { Link, useNavigate } from "react-router-dom";
+import GoogleAuth from "./../GoogleAuth/GoogleAuth";
 
 const Register = () => {
-const {createSignUpUser} = useContext(AuthContext);
-const navigate = useNavigate();
+  const { createSignUpUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const handleRegisterSubmit = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const password = form.password.value;
-        const photo = form.photo.value;
-        const isValidate = false;
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    const isValidate = false;
 
-        createSignUpUser(email,password)
-        .then((result) => {
-            console.log(result);
-            const createdAt = result?.user?.metadata?.
-            creationTime            
-            const users = {name,email,photo,createdAt,isValidate};
+    createSignUpUser(email, password)
+      .then((result) => {
+        console.log(result);
+        const createdAt = result?.user?.metadata?.creationTime;
+        const users = { name, email, photo, createdAt, isValidate };
 
-            fetch('https://coffee-store-server-jade-iota.vercel.app/users',{
-              method: "POST",
-              headers: {
-                "content-type": 'application/json'
-              },
-              body: JSON.stringify(users)
-            })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data);
-              alert('user is successfully created');
-              navigate("/")
-              form.reset();
-            })
-
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(users),
         })
-        .catch(err => {
-            console.log(err);
-        })
-
-    }
-
-
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            alert("user is successfully created");
+            navigate("/");
+            form.reset();
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -109,8 +104,11 @@ const navigate = useNavigate();
                   required
                 />
               </div>
+              <p>Have You an account ? Please <Link to="/submit/Login" className="text-[#E3B577]">Login</Link> </p>
               <div className="form-control mt-6">
-                <button type="submit" className="btn bg-[#E3B577]">Register Now</button>
+                <button type="submit" className="btn bg-[#E3B577]">
+                  Register Now
+                </button>
               </div>
               <GoogleAuth></GoogleAuth>
             </form>

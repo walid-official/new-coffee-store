@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import GoogleAuth from "../GoogleAuth/GoogleAuth";
 
 const Login = () => {
     const {signInUser} = useContext(AuthContext);
@@ -22,7 +23,7 @@ const Login = () => {
           const loginInfo = {email,lastSignInTime}
           console.log(loginInfo);
 
-          fetch(`https://coffee-store-server-jade-iota.vercel.app/users`,{
+          fetch(`http://localhost:5000/users`,{
             method: "PATCH",
             headers: {
               'content-type': 'application/json'
@@ -39,18 +40,6 @@ const Login = () => {
             console.log(error);
         })
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
   return (
     <div>
@@ -91,12 +80,16 @@ const Login = () => {
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
+                    Forgot password? <br /> 
                   </a>
                 </label>
+                <p>Don't have an account ? Please <Link to="/submit/Register" className="text-[#E3B577]">Register</Link> </p>
               </div>
               <div className="form-control mt-6">
                 <button className="btn bg-[#E3B577]">Login</button>
+              </div>
+              <div className="">
+                <GoogleAuth></GoogleAuth>
               </div>
             </form>
           </div>
