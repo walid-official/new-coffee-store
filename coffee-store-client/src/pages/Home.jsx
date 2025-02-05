@@ -17,13 +17,11 @@ const Home = () => {
       <div className="pb-10">
         <Service></Service>
       </div>
-      <div className="py-20">
-        <ShowCoffees coffeeStore={coffeeStore}></ShowCoffees>
-      </div>
-     
-
       <div className="">
         <Popularity></Popularity>
+      </div>
+      <div className="py-20">
+        <ShowCoffees coffeeStore={coffeeStore}></ShowCoffees>
       </div>
       <div className="">
         <Follow></Follow>

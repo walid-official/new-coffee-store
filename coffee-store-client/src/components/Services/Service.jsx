@@ -3,11 +3,10 @@ import icon1 from "../../assets/icons/1.png";
 import icon2 from "../../assets/icons/2.png";
 import icon3 from "../../assets/icons/3.png";
 import ServiceImage from "../../assets/more/service-img.png";
-import ServiceCoffee from "../../assets/more/7.png";
 
 const Service = () => {
   return (
-    <div className="">
+    <div className="" id="services">
       <div className="pb-32">
         <div className="w-[80%] mx-auto lg:flex lg:gap-20 lg:justify-between">
           <div className="w-[50%]">

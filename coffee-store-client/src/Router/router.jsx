@@ -5,6 +5,7 @@ import FormLayout from "../layout/FormLayout";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import LoginRegisterLayout from "../layout/LoginRegisterLayout";
 import About from "../components/About/About";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "/submit/:page",
     element: <LoginRegisterLayout></LoginRegisterLayout>
+  },
+  {
+    path:"*",
+    element: <ErrorPage></ErrorPage>
   }
 ]);
 

@@ -31,7 +31,7 @@ const Navbar = () => {
       <NavLink to="/about">
         <li className="text-xl">About</li>
       </NavLink>
-      <NavLink to="">
+      <NavLink onClick={() => scrollToSection("services")}>
         <li className="text-xl">Services</li>
       </NavLink>
       <NavLink to="">
