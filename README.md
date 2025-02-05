@@ -4,7 +4,7 @@ Welcome to the **Coffee Store**, a dynamic online platform where users can explo
 
 ##
 
-<img src="https://raw.githubusercontent.com/walid-official/new-coffee-store/main/Screenshot-2025-01-04-185622.png" alt="Coffee Store Screenshot" width="600">
+<img src="https://raw.githubusercontent.com/walid-official/new-coffee-store/main/Screenshot-2025-01-04-185622.png" alt="Coffee Store Screenshot" width="600" height="400">
 
 
 ## 🌍 Live Site URL  
