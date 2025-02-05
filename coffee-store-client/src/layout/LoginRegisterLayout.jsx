@@ -6,6 +6,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Dashboard from "../pages/Dashboard";
 
+
 const LoginRegisterLayout = () => {
   const { page } = useParams();
   return (
@@ -16,7 +17,7 @@ const LoginRegisterLayout = () => {
       {page === "Login" && <Login></Login>}
       {page === "Register" && <Register></Register>}
       {page === "DashBoard" && <Dashboard></Dashboard>}
-      <Footer></Footer>
+      <Footer id="contact"></Footer>
     </div>
   );
 };

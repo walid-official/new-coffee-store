@@ -14,7 +14,7 @@ const MainLayout = () => {
         <Banner></Banner>
       </div>
       <Outlet></Outlet>
-      <Footer></Footer>
+      <Footer id="contact"></Footer>
     </div>
   );
 };

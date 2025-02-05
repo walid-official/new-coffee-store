@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import iconNav from "../../assets/more/logo1.png";
 import bgNav from "../../assets/more/15.jpg";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -7,6 +7,21 @@ import { FaTwitter } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 const Navbar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const scrollToSection = (sectionId) => {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false); // Close menu after clicking a link
+  };
+
+
+
 
   const Links = (
     <>
@@ -25,7 +40,7 @@ const Navbar = () => {
       <NavLink to="/submit/DashBoard">
         <li className="text-xl">DashBoard</li>
       </NavLink>
-      <NavLink to="">
+      <NavLink onClick={() => scrollToSection("contact")}>
         <li className="text-xl">Contacts</li>
       </NavLink>
     </>

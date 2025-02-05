@@ -18,7 +18,7 @@ const FormLayout = () => {
       >
         <CustomCoffee></CustomCoffee>
       </div>
-      <Footer></Footer>
+      <Footer id="contact"></Footer>
     </div>
   );
 };
