@@ -19,7 +19,7 @@ const Banner = () => {
       <p className="py-3 md:w-[60%] mx-auto text-white text-xl pb-6">
       we’re passionate about bringing you the finest coffee, sourced with care and brewed to perfection. Every cup is a blend of quality, flavor, and warmth—because great coffee makes every moment better!
       </p>
-      <Link to="/CustomCoffee" ><button className="btn bg-[#E3B577] text-xl font-semibold border-none">Custom Coffee</button></Link>
+      <Link to="/CustomCoffee/CustomCoffee" ><button className="btn bg-[#E3B577] text-xl font-semibold border-none">Custom Coffee</button></Link>
       </div> : <div className="text-center">
           <h1 className="text-5xl text-white">Coffee <span className=" italic text-[#E3B577]"  style={{ color: "transparent", WebkitTextStroke: "2px #E3B577" }}>Sphere</span></h1>
         <h2 className="text-6xl font-bold text-[#E3B577] py-3">Would you like a Cup of Delicious Coffee?</h2>
@@ -28,7 +28,7 @@ const Banner = () => {
           nostalgia back!! Your companion of every moment!!! Enjoy the beautiful
           moments and make them memorable.
         </p>
-        <Link to="/CustomCoffee" ><button className="btn bg-[#E3B577] text-xl font-semibold border-none">Custom Coffee</button></Link>
+        <Link to="/CustomCoffee/CustomCoffee" ><button className="btn bg-[#E3B577] text-xl font-semibold border-none">Custom Coffee</button></Link>
         </div>
       }
         

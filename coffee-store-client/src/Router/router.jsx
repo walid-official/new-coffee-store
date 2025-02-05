@@ -6,6 +6,7 @@ import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import LoginRegisterLayout from "../layout/LoginRegisterLayout";
 import About from "../components/About/About";
 import ErrorPage from "../pages/ErrorPage";
+import ProductDetails from "../pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,16 +25,20 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/CustomCoffee",
+    path: "CustomCoffee/:DynamicCoffee",
     element: <FormLayout></FormLayout>
   },
   {
-    path: "/CoffeeInfo/:id",
+    path: "productDetails/:id",
+    element: <ProductDetails></ProductDetails>
+  },
+  {
+    path: "CoffeeInfo/:id",
     element: <UpdateCoffee></UpdateCoffee>,
     loader: ({params}) => fetch(`http://localhost:5000/coffeeStore/${params.id}`)
   },
   {
-    path: "/submit/:page",
+    path: "submit/:page",
     element: <LoginRegisterLayout></LoginRegisterLayout>
   },
   {
