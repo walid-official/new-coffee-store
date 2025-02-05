@@ -23,13 +23,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="">
+    <div className="border-b">
       <div className="backdrop-blur-sm bg-[#13100d4b] ">
-        <div className="w-11/12 mx-auto items-center justify-center py-2 flex gap-2">
-          <img className="w-20" src={iconNav} alt="" />
+        <div className="w-11/12 mx-auto items-center justify-center py-2 pt-4 flex gap-2">
+          <img className="w-20" src="http://just-theme.com/mrcoffee/images/main-logo.png" alt="" />
         </div>
         <div className="w-11/12 mx-auto">
-          <div className="navbar">
+          <div className="navbar py-3">
             <div className="navbar-start">
               <div className="dropdown">
                 <div

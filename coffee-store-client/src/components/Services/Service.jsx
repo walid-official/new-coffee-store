@@ -3,17 +3,15 @@ import icon1 from "../../assets/icons/1.png";
 import icon2 from "../../assets/icons/2.png";
 import icon3 from "../../assets/icons/3.png";
 import ServiceImage from "../../assets/more/service-img.png";
-import ServiceCoffee from "../../assets/more/7.png"
-
-
+import ServiceCoffee from "../../assets/more/7.png";
 
 const Service = () => {
   return (
-    <div className="bg-center bg-cover bg-no-repeat z-10" style={{backgroundImage: `url(${ServiceCoffee})`}}>
-      <div className="py-16 pb-32">
+    <div className="">
+      <div className="pb-32">
         <div className="w-[80%] mx-auto lg:flex lg:gap-20 lg:justify-between">
-          <div className="w-full">
-            <div className="w-full text-white">
+          <div className="w-[50%]">
+            <div className="w-full">
               <h2 className="text-4xl font-bold">
                 Our <span className="text-[#E3B577]">Services</span>{" "}
               </h2>
@@ -61,8 +59,10 @@ const Service = () => {
               </div>
             </div>
           </div>
-          <div className="flex lg:justify-end justify-start w-full">
-            <img src={ServiceImage} alt="" />
+          <div className="w-[50%]">
+            <div className="flex border items-center justify-end">
+              <img src={ServiceImage} alt="" />
+            </div>
           </div>
         </div>
       </div>

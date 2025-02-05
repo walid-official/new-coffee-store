@@ -1,4 +1,3 @@
-
 import CoffeeCard from "../components/coffeeCard/CoffeeCard";
 import Service from "../components/Services/Service";
 import Popularity from "../components/Popularity/Popularity";
@@ -7,29 +6,29 @@ import ShowCoffees from "../components/ShowCustomCoffee/ShowCoffees";
 import { useLoaderData } from "react-router-dom";
 
 const Home = () => {
-const coffeeStore = useLoaderData()
+  const coffeeStore = useLoaderData();
 
-console.log(coffeeStore);
+  console.log(coffeeStore);
   return (
-    
-      <div className="bg-[#f9efe4]">
-        <div className="">
-          <CoffeeCard></CoffeeCard>
-        </div>
-        <div className="py-20">
-          <ShowCoffees coffeeStore={coffeeStore}></ShowCoffees>
-        </div>
-        <div className="pb-10">
-          <Service></Service>
-        </div>
-        
-        <div className="">
-          <Popularity></Popularity>
-        </div>
-        <div className="">
-            <Follow></Follow>
-        </div>
+    <div className="bg-[#f9efe4]">
+      <div className="">
+        <CoffeeCard></CoffeeCard>
       </div>
+      <div className="pb-10">
+        <Service></Service>
+      </div>
+      <div className="py-20">
+        <ShowCoffees coffeeStore={coffeeStore}></ShowCoffees>
+      </div>
+     
+
+      <div className="">
+        <Popularity></Popularity>
+      </div>
+      <div className="">
+        <Follow></Follow>
+      </div>
+    </div>
   );
 };
 
