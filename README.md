@@ -2,6 +2,11 @@
 
 Welcome to the **Coffee Store**, a dynamic online platform where users can explore, purchase, and manage their favorite coffee products. This project is built with **MERN stack** and features authentication, shopping cart functionality, user favorites, and an admin dashboard for product management.
 
+##
+
+<img src="https://raw.githubusercontent.com/walid-official/new-coffee-store/main/Screenshot-2025-01-04-185622.png" alt="Coffee Store Screenshot" width="600">
+
+
 ## 🌍 Live Site URL  
 🔗 coffee-store8809.surge.sh  
 
