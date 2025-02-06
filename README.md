@@ -1,6 +1,6 @@
 Here's the **clean and structured README** with the **dependencies** included properly:  
 
-```markdown
+
 # ☕ Coffee Store - Online Coffee Shopping Platform  
 
 Welcome to the **Coffee Store**, a dynamic online platform where users can explore, purchase, and manage their favorite coffee products. This project is built with the **MERN stack** and features authentication, shopping cart functionality, user favorites, and an admin dashboard for product management.  
